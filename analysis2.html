@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="echarts.min.js"></script>
+    <script src="theme.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://lottie.host/812c1321-3e47-49de-a457-b275270e3420/S5a0AMotQP.json"></script>
+
+    <title>Analysis</title>
+</head>
+
+<body style="font-family:'pingfang sc';background-color: rgb(240, 240, 240);padding-left: 48px;padding-right:48px;padding-top:30px;">
+    <div class="chart" style="line-height:32px;text-align:left;width:30%;float:left;height:760px;margin-top: 18px;margin-bottom: 18px;padding-top:24px;margin-right:2%;padding-left: 2%;padding-right: 2%;border-radius: 8px;background-color: rgb(255, 255, 255);">
+        <div style="text-align: left;line-height:80px;font-size:36px;font-family:'pingfang sc';color:#183386;font-weight: 600;">
+            Analysis
+        </div>
+        <div> 有家庭出行:
+        </div>
+        <div> 快乐更多，困倦更少，焦虑更少；
+        </div>
+        <div> 更多独自出行:
+        </div>
+        <div> 更多人会容易困倦、焦虑、生气
+        </div>
+        <div> 无论家庭出行还是独自出行，都是很劳累的一件事
+        </div>
+    </div>
+
+
+
+
+    <div id="chart2" class="chart" style="float:left;width:56%;height:760px;margin-top: 18px;margin-bottom: 18px;padding-top:24px;padding-left: 4%;padding-right: 4%;border-radius: 8px;background-color: rgb(255, 255, 255);">
+        <script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('chart2'), 'theme');
+
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: '出行情绪与居住状态对比分析',
+                    left: 'center',
+                },
+
+
+                legend: {
+                    top: '5%',
+                    orient: 'vertical',
+                    left: 'left',
+                    textStyle: {
+                        color: '#333',
+                        fontSize: '14'
+                    },
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '16',
+                        fontWeight: '400',
+                        color: '#4d4d4d',
+                    }
+                },
+                radar: {
+                    axisName: {
+                        color: '#4d4d4d',
+                        FontSize: 14,
+                    },
+                    axisLabel: {
+                        showMaxLabel: true,
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#dcdcdc'
+                        },
+                    },
+                    nameGap: 3,
+                    // shape: 'circle',
+                    indicator: [{
+                        name: '劳累',
+                        max: 100
+                    }, {
+                        name: '焦虑',
+                        max: 120
+                    }, {
+                        name: '悲伤',
+                        max: 120
+                    }, {
+                        name: '无聊',
+                        max: 100
+                    }, {
+                        name: '困倦',
+                        max: 100
+                    }, {
+                        name: '郁闷',
+                        max: 120
+                    }, {
+                        name: '快乐',
+                        max: 100
+                    }, {
+                        name: '生气',
+                        max: 120
+                    }, ]
+                },
+                series: [{
+                    name: 'Family vs Solitary',
+                    type: 'radar',
+                    data: [{
+                        value: [65, 26, 13, 47, 60, 26, 61, 34],
+                        name: '与家庭居住用户'
+                    }, {
+                        value: [69, 41, 25, 50, 88, 25, 50, 44],
+                        name: '独自居住用户'
+                    }]
+                }]
+            };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        </script>
+
+    </div>
+    <div style="text-align: center;line-height:32px;font-size:36px;font-family:'pingfang sc';color:#183386;font-weight: 600;">
+    </div>
+    <div class="button">
+        <a href="analysis3.html">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://lottie.host/e3665271-9411-4ad0-8e95-968e02d64876/qkiqMt6DoW.json" background="transparent" speed="1" style="width: 120px; height: 120px;float: right;" loop autoplay></lottie-player>
+        </a>
+
+    </div>
+
+
+
+    <script>
+        $(document).ready(function() {
+
+            $(".chart").hover(
+                function() {
+                    $(this).css("box-shadow", "0px 0px 20px rgba(132, 132, 132, 0.2)")
+                        .css("cursor", "pointer");
+                },
+                function() {
+                    $(this).css("box-shadow", "none");
+
+                }
+            )
+        });
+
+        $(document).ready(function() {
+
+            $(".button").hover(
+                function() {
+                    $(this).css("cursor", "pointer");
+                },
+                function() {
+                    $(this).css("cursor", "auto");
+
+                }
+            )
+        });
+    </script>
+
+</body>
+
+</html>
