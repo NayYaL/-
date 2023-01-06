@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="echarts.min.js"></script>
+    <script src="theme.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://lottie.host/812c1321-3e47-49de-a457-b275270e3420/S5a0AMotQP.json"></script>
+
+    <title>Homepage</title>
+
+</head>
+
+<body style="background-color: rgb(240, 240, 240);padding-left: 48px;padding-right:48px;padding-top:30px;">
+    <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+    <div id="chart1" class="chart" style="width:30%;float:left;height:400px;margin-top: 18px;margin-bottom: 18px;padding-top:24px;margin-right:2%;padding-left: 4%;padding-right: 4%;border-radius: 8px;background-color: rgb(255, 255, 255);">
+
+        <script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('chart1'), 'theme');
+
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: '情绪是否被关注和理解？',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'item'
+                },
+                legend: {
+                    top: '5%',
+                    orient: 'vertical',
+                    left: 'left',
+                    textStyle: {
+                        color: '#333',
+                        fontSize: '14'
+                    },
+                },
+                series: [{
+                    name: '您觉得大多数情况下，这些情绪是否被关注和理解？',
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: '16',
+                            fontWeight: '400',
+                            color: '#4d4d4d',
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [{
+                        value: 77,
+                        name: '不经常得到'
+                    }, {
+                        value: 39,
+                        name: '容易得到'
+                    }, {
+                        value: 29,
+                        name: '不需要得到'
+                    }, ]
+                }]
+            };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        </script>
+    </div>
+
+    <div id="chart2" class="chart" style="float:left;width:52%;height:400px;margin-top: 18px;margin-bottom: 18px;padding-top:24px;padding-left: 4%;padding-right: 4%;border-radius: 8px;background-color: rgb(255, 255, 255);">
+        <script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('chart2'), 'theme');
+
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: '灯光偏好关键词调研',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        // Use axis to trigger tooltip
+                        type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+                    }
+                },
+                legend: {
+                    top: '5%',
+                    orient: 'vertical',
+                    left: 'left',
+                    textStyle: {
+                        color: '#333',
+                        fontSize: '14'
+                    },
+                },
+                grid: {
+                    left: '12%',
+                    right: '12%',
+                    bottom: '12%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'value'
+                },
+                yAxis: {
+                    type: 'category',
+                    data: ['清晰明亮的', '个性化的', '朦胧柔和的', '感性的', '自动调节的']
+                },
+                series: [{
+                    name: '很喜欢',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [74, 31, 42, 33, 55]
+                }, {
+                    name: '喜欢',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [43, 32, 39, 44, 50]
+                }, {
+                    name: '还可以',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [26, 60, 41, 55, 31]
+                }, {
+                    name: '不喜欢',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [2, 23, 13, 9, 4]
+                }, ]
+            };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        </script>
+    </div>
+
+    <div id="chart3" class="chart" style="width:30%;float:left;height:400px;margin-top: 18px;margin-bottom: 18px;padding-top:24px;margin-right:2%;padding-left: 4%;padding-right: 4%;border-radius: 8px;background-color: rgb(255, 255, 255);">
+        <script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('chart3'), 'theme');
+
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: '调研用户年龄分布',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'item'
+                },
+                legend: {
+                    top: '5%',
+                    orient: 'vertical',
+                    left: 'left',
+                    textStyle: {
+                        color: '#333',
+                        fontSize: '14'
+                    },
+                },
+                series: [{
+                    name: '您的年龄是？',
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: '16',
+                            fontWeight: '400',
+                            color: '#4d4d4d'
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [{
+                        value: 2,
+                        name: '18岁及以下'
+                    }, {
+                        value: 36,
+                        name: '18-28岁'
+                    }, {
+                        value: 43,
+                        name: '28-38岁'
+                    }, {
+                        value: 16,
+                        name: '38-48岁'
+                    }, {
+                        value: 9,
+                        name: '48岁及以上'
+                    }]
+                }]
+            };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        </script>
+    </div>
+    <div id="chart4" class="chart" style="float:left;width:52%;height:400px;margin-top: 18px;margin-bottom: 18px;padding-top:24px;padding-left: 4%;padding-right: 4%;border-radius: 8px;background-color: rgb(255, 255, 255);">
+        <script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('chart4'), 'theme');
+
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: '有车用户vs未来购车用户的用车目的',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        // Use axis to trigger tooltip
+                        type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+                    }
+                },
+                legend: {
+                    top: '5%',
+                    orient: 'vertical',
+                    left: 'left',
+                    textStyle: {
+                        color: '#333',
+                        fontSize: '14'
+                    },
+                },
+                grid: {
+                    left: '6%',
+                    right: '6%',
+                    bottom: '12%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'value',
+                    boundaryGap: [0, 0.01]
+                },
+                yAxis: {
+                    type: 'category',
+                    data: ['其他', '上班通勤', '家庭市郊或市外出游', '休闲娱乐代步']
+                },
+                series: [{
+                    name: '有车用户',
+                    type: 'bar',
+                    data: [4, 33, 30, 26]
+                }, {
+                    name: '未来购车用户',
+                    type: 'bar',
+                    data: [1, 25, 48, 37]
+                }]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        </script>
+    </div>
+    <div id="chart7" class="chart" style="width:92%;float:left;height:800px;margin-top: 18px;margin-bottom: 18px;padding-top:24px;padding-left: 4%;padding-right: 4%;border-radius: 8px;background-color: rgb(255, 255, 255);">
+        <script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('chart7'), 'theme');
+
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: '出行过程中的情绪更多是？',
+                    left: 'center',
+                },
+                polar: {
+                    radius: [30, '80%']
+                },
+
+                radiusAxis: {
+                    max: 80
+                },
+
+                angleAxis: {
+                    type: 'category',
+                    data: ['快乐', '生气', '郁闷', '困倦', '无聊', '悲伤', '劳累', '焦虑'],
+                    startAngle: 75
+                },
+                tooltip: {},
+                series: {
+                    type: 'bar',
+                    data: [61, 39, 27, 72, 51, 18, 70, 32],
+                    coordinateSystem: 'polar',
+                    label: {
+                        show: true,
+                        position: 'middle',
+                        formatter: '{b}: {c}'
+                    }
+                },
+                animation: false
+            };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        </script>
+    </div>
+
+    <div id="chart5" class="chart" style="width:41%;float:left;height:600px;margin-top: 18px;margin-bottom: 18px;margin-right:2%;padding-top:24px;padding-left: 4%;padding-right: 4%;border-radius: 8px;background-color: rgb(255, 255, 255);">
+        <script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('chart5'), 'theme');
+
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: '出行情绪与居住状态对比分析',
+                    left: 'center',
+                },
+
+
+                legend: {
+                    top: '5%',
+                    orient: 'vertical',
+                    left: 'left',
+                    textStyle: {
+                        color: '#333',
+                        fontSize: '14'
+                    },
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '16',
+                        fontWeight: '400',
+                        color: '#4d4d4d',
+                    }
+                },
+                radar: {
+                    axisName: {
+                        color: '#4d4d4d',
+                        FontSize: 14,
+                    },
+                    axisLabel: {
+                        showMaxLabel: true,
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#dcdcdc'
+                        },
+                    },
+                    nameGap: 3,
+                    // shape: 'circle',
+                    indicator: [{
+                        name: '劳累',
+                        max: 100
+                    }, {
+                        name: '焦虑',
+                        max: 120
+                    }, {
+                        name: '悲伤',
+                        max: 120
+                    }, {
+                        name: '无聊',
+                        max: 100
+                    }, {
+                        name: '困倦',
+                        max: 100
+                    }, {
+                        name: '郁闷',
+                        max: 120
+                    }, {
+                        name: '快乐',
+                        max: 100
+                    }, {
+                        name: '生气',
+                        max: 120
+                    }, ]
+                },
+                series: [{
+                    name: 'Family vs Solitary',
+                    type: 'radar',
+                    data: [{
+                        value: [65, 26, 13, 47, 60, 26, 61, 34],
+                        name: '与家庭居住用户'
+                    }, {
+                        value: [69, 41, 25, 50, 88, 25, 50, 44],
+                        name: '独自居住用户'
+                    }]
+                }]
+            };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        </script>
+    </div>
+    <div id="chart6" class="chart" style="width:41%;float:left;height:600px;margin-top: 18px;margin-bottom: 18px;padding-top:24px;padding-left: 4%;padding-right: 4%;border-radius: 8px;background-color: rgb(255, 255, 255);">
+        <script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('chart6'), 'theme');
+
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: '那些难忘的经历和感受是在……',
+                    left: 'center',
+                },
+
+                legend: {
+                    top: '5%',
+                    orient: 'vertical',
+                    left: 'left',
+                    textStyle: {
+                        color: '#333',
+                        fontSize: '14'
+                    },
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '16',
+                        fontWeight: '400',
+                        color: '#4d4d4d',
+                    }
+                },
+
+                radar: {
+
+                    axisName: {
+                        color: '#4d4d4d',
+                        FontSize: 14,
+                    },
+                    axisLabel: {
+                        showMaxLabel: true,
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#dcdcdc'
+                        },
+                    },
+                    nameGap: 3,
+                    // shape: 'circle',
+                    indicator: [{
+                        name: '独自开车或乘车时',
+                        max: 40
+                    }, {
+                        name: '和家人在一起时',
+                        max: 40
+                    }, {
+                        name: '和朋友在一起时',
+                        max: 40
+                    }, {
+                        name: '和陌生人在一起时',
+                        max: 40
+                    }, {
+                        name: '没有过这种感觉',
+                        max: 40
+                    }, ]
+
+                },
+                // yAxis: {
+                //     type: 'value',
+                //     position: 'right',
+                //     axisLabel: {
+                //         formatter: '{value}%'
+                //     }
+                // },
+
+                series: [{
+                    name: 'Family vs Solitary',
+                    type: 'radar',
+                    data: [{
+                        value: [17, 37, 11, 1, 8],
+                        name: '与家庭居住用户'
+                    }, {
+                        value: [5, 10, 11, 0, 6],
+                        name: '独自居住用户'
+                    }]
+                }]
+            };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        </script>
+    </div>
+    <div id="chart8" class="chart" style="width:92%;float:left;height:600px;margin-top: 18px;margin-bottom: 18px;padding-top:24px;padding-left: 4%;padding-right: 4%;padding-bottom:24px;border-radius: 8px;background-color: rgb(255, 255, 255);">
+        <script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('chart8'), 'theme');
+
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: '未来的无人驾驶的第三空间中您最期待……',
+                    left: 'center',
+                },
+
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                legend: {
+                    top: '5%',
+                    orient: 'vertical',
+                    left: 'left',
+                    textStyle: {
+                        color: '#333',
+                        fontSize: '14'
+                    },
+                },
+                grid: {
+                    left: '16%',
+                    right: '8%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'value',
+                    boundaryGap: [0, 0.01]
+                },
+                yAxis: {
+                    type: 'category',
+                    data: ['有车用户', '准备买车用户', '无车用户']
+                },
+
+                series: [{
+                    name: '更炫酷的外观和内饰',
+                    type: 'bar',
+                    data: [22, 14, 35]
+                }, {
+                    name: '更沉浸的影音娱乐游戏',
+                    type: 'bar',
+                    data: [46, 14, 47]
+                }, {
+                    name: '提供印象深刻的情绪价值',
+                    type: 'bar',
+                    data: [38, 85, 47]
+                }, {
+                    name: '更了解个性并提供智能服务',
+                    type: 'bar',
+                    data: [56, 85, 58]
+                }, ]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        </script>
+    </div>
+    <div id="chart9" class="chart" style="width:92%;float:left;height:800px;margin-top: 18px;margin-bottom: 80px;padding-top:24px;padding-left: 4%;padding-right: 4%;padding-bottom:24px;border-radius: 8px;background-color: rgb(255, 255, 255);">
+        <script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('chart9'), 'theme');
+
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: '期待和家庭出行的沟通频率有没有关系呢？',
+                    left: 'center',
+                },
+
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                legend: {
+                    top: '5%',
+                    orient: 'vertical',
+                    left: 'left',
+                    textStyle: {
+                        color: '#333',
+                        fontSize: '14'
+                    },
+                },
+                grid: {
+                    left: '16%',
+                    right: '8%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'value',
+                    boundaryGap: [0, 0.01]
+                },
+                yAxis: {
+                    type: 'category',
+                    data: ['路上一直聊天', '空闲会聊一下', '几乎不太聊天', '不确定']
+                },
+
+                series: [{
+                    name: '更炫酷的外观和内饰',
+                    type: 'bar',
+                    data: [27, 26, 20, 12]
+                }, {
+                    name: '更沉浸的影音娱乐游戏',
+                    type: 'bar',
+                    data: [38, 50, 18, 41]
+                }, {
+                    name: '提供印象深刻的情绪价值',
+                    type: 'bar',
+                    data: [50, 35, 72, 70]
+                }, {
+                    name: '更了解个性并提供智能服务',
+                    type: 'bar',
+                    data: [52, 68, 55, 53]
+                }, ]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        </script>
+    </div>
+    <div class="button" style="text-align: center;line-height:32px;font-size:36px;font-family:'pingfang sc';color:#183386;font-weight: 600;">
+        <div>
+            Analysis
+        </div>
+    </div>
+    <div class="button">
+        <a href="analysis.html">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://lottie.host/e3665271-9411-4ad0-8e95-968e02d64876/qkiqMt6DoW.json" background="transparent" speed="1" style="width: 160px; height: 160px;margin:auto" loop autoplay></lottie-player>
+        </a>
+
+        <script>
+            $(document).ready(function() {
+
+                $(".chart").hover(
+                    function() {
+                        $(this).css("box-shadow", "0px 0px 20px rgba(132, 132, 132, 0.2)")
+                            .css("cursor", "pointer");
+                    },
+                    function() {
+                        $(this).css("box-shadow", "none");
+
+                    }
+                )
+            });
+
+            $(document).ready(function() {
+
+                $(".button").hover(
+                    function() {
+                        $(this).css("cursor", "pointer");
+                    },
+                    function() {
+                        $(this).css("cursor", "auto");
+
+                    }
+                )
+            });
+        </script>
+
+
+
+</body>
+
+</html>
